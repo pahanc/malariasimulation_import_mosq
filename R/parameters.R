@@ -300,7 +300,6 @@ get_parameters <- function(overrides = list(),square_number=square_number,run_nu
 
 
   parameters <- list(
-    use_Ace_mosq = FALSE,
     mosq_suppression = mosq_supp_lst,
     mosq_seasonality = mosq_seas_lst,
     emergence = 0,

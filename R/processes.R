@@ -45,7 +45,6 @@ create_processes <- function(
         parameters$species,
 	parameters$mosq_suppression,
 	parameters$mosq_seasonality,
-	params$use_Ace_mosq,
         parameters$dpl
       )
     )

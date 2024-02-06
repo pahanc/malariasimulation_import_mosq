@@ -33,7 +33,6 @@ struct AdultMosquitoModel {
     const double tau; //extrinsic incubation period
     std::vector<double> mosq_suppression;
     std::vector<double> mosq_seasonality;
-    bool use_Ace_mosq;
     double foim; //force of infection towards mosquitoes
     AdultMosquitoModel(AquaticMosquitoModel, double, double, std::vector<double>,std::vector<double>,bool,double,double);
 };

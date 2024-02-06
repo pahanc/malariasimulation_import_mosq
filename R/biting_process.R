@@ -170,7 +170,6 @@ simulate_bites <- function(
         foim,
 	parameters$mosq_suppression[[s_i]],
 	parameters$mosq_seasonality[[s_i]],
-	parameters$use_Ace_mosq,
         solver_states[[ADULT_ODE_INDICES['Sm']]],
         f
       )
