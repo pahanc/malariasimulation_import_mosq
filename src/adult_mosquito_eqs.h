@@ -34,7 +34,7 @@ struct AdultMosquitoModel {
     std::vector<double> mosq_suppression;
     std::vector<double> mosq_seasonality;
     double foim; //force of infection towards mosquitoes
-    AdultMosquitoModel(AquaticMosquitoModel, double, double, std::vector<double>,std::vector<double>,bool,double,double);
+    AdultMosquitoModel(AquaticMosquitoModel, double, double, std::vector<double>,std::vector<double>,double,double);
 };
 
 // create a system of equations for the solver
