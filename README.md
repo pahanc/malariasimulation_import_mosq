@@ -8,7 +8,7 @@ https://github.com/mrc-ide/malariasimulation/releases/tag/v1.4.3
 
 Please note, malariasimulation is only compatible with R >= 4.0.0
 
-The package canbe installed from github using the "remotes" library. Note, this
+The package can be installed from github using the "remotes" library. Note, this
 method requires [RBuildTools](https://cran.r-project.org/bin/windows/Rtools/)
 
 ```R
