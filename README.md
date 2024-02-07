@@ -24,7 +24,10 @@ The following R packages are required:
 ## Usage
 
 To run this modified version of malariasimulation, input files generated from the mosquito metapopulation model developed in Hancock, P.A., North, A. et al. are required. These files are located here: 
-In addition, files containing site specific model parameters are required. These files are located and described here:
+
+In addition, files containing site specific model parameters are required. These files are located and described here: 
+
+
 
 To run the modified malariasimulation model with the default parameters, you
 can execute the function run_site() which is located here:
