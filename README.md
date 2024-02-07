@@ -17,9 +17,9 @@ install_github('pahanc/malariasimulation_import_mosq')
 ```
 
 The following R packages are required:
-*individual v0.1.12
-*malariaEquilibrium 
-*malariasimulation v1.4.3"
+* individual v0.1.12
+* malariaEquilibrium 
+* malariasimulation v1.4.3"
 
 ## Usage
 
