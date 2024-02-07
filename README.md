@@ -1,56 +1,27 @@
-[![R build status](https://github.com/mrc-ide/malariasimulation/workflows/R-CMD-check/badge.svg)](https://github.com/mrc-ide/malariasimulation/actions)
-[![codecov](https://codecov.io/github/mrc-ide/malariasimulation/branch/master/graphs/badge.svg)](https://codecov.io/github/mrc-ide/malariasimulation)
 
-# malariasimulation
+# Importing mosquito population time series into malariasimulation
 
-Imperial College London's next malaria simulation. The main goals are make an
-extensible, maintainable and fast simulation to evaluate and report on malaria
-intervention strategies.
-
-The model is defined in this package, whereas the simulation is executed using
-the [individual](https://github.com/mrc-ide/individual) package.
+This is a modified version of Imperial College London's malariasimulation model to import a time series of the daily relative emergence of adult females, as desribed in Hancock, P.A, North, A et al.. The modifications were made to malariasimulation version 1.4.3 which is available here:
+https://github.com/mrc-ide/malariasimulation/releases/tag/v1.4.3
 
 ## Installation
 
 Please note, malariasimulation is only compatible with R >= 4.0.0
 
-You can install the binary package on Windows and Mac using the following
-command:
 
-```R
-# Enable this universe
-options(repos = c(
-    mrcide = 'https://mrc-ide.r-universe.dev',
-    CRAN = 'https://cloud.r-project.org'))
-
-# Install some packages
-install.packages('malariasimulation')
-```
 
 The package can also be installed from github using the "remotes" library. Note, this
 method requires [RBuildTools](https://cran.r-project.org/bin/windows/Rtools/)
 
 ```R
 library('remotes')
-install_github('mrc-ide/malariasimulation')
+install_github('pahanc/malariasimulation_import_mosq')
 ```
 
-For development it is most convenient to run the code from source. You can
-install the dependencies in RStudio by opening the project and selecting "Build" >
-"Install and Restart"
-
-Command line users can execute:
-
-```R
-library('remotes')
-install_deps('.', dependencies = TRUE)
-```
-
-Docker users can achieve the same with one line
-
-```bash
-docker build . -f docker/Dockerfile.dev -t [your image name]
-```
+The following R packages are required:
+"mrc-ide/individual"
+"mrc-ide/malariaEquilibrium"
+"mrc-ide/malariasimulation@v1.4.3"
 
 ## Usage
 
