@@ -233,37 +233,46 @@
 #' rates; default = TRUE 
 #'
 #' @export
-get_parameters <- function(overrides = list(),square_number=square_number,run_number=run_number) {
+get_parameters <- function(overrides = list(),square_number=square_number,run_number=run_number, gam_supp=gam_supp, arab_supp=arab_supp, fun_supp=fun_supp) {
+  
+  #Read in files containing time series of daily vector population suppression values:
+
+  #An. gambiae/coluzzii
   
   supp_filename_gamb<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_gamb_PBO",square_number,"_",run_number,".csv",sep="")
   mosq_suppression_gamb<-unlist(read.csv(supp_filename_gamb,header=F,colClasses="numeric"))
-  #mosq_suppression<-unlist(read.csv("/Imperial March 2021/SEA project/mosq_suppression.csv",header=F,colClasses="numeric"))
   dimnames(mosq_suppression_gamb)<-NULL
-  mosq_suppression_gamb<-as.vector(mosq_suppression_gamb)
-  ##No Drive:
-  mosq_suppression_gamb<-rep(1,length(mosq_suppression_gamb))
+  if (gam_supp){
+      mosq_suppression_gamb<-as.vector(mosq_suppression_gamb)
+  } else{
+      #No Drive:
+      mosq_suppression_gamb<-rep(1,length(mosq_suppression_gamb))
+  }
 
+  #An. arabiensis
   supp_filename_arab<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_arab_PBO",square_number,"_",run_number,".csv",sep="")
   mosq_suppression_arab<-unlist(read.csv(supp_filename_arab,header=F,colClasses="numeric"))
   dimnames(mosq_suppression_arab)<-NULL
-  mosq_suppression_arab<-as.vector(mosq_suppression_arab)
-  # #No Drive:
-  mosq_suppression_arab<-rep(1,length(mosq_suppression_arab))
+  if (arab_supp){
+      mosq_suppression_arab<-as.vector(mosq_suppression_arab)
+  } else{
+      #No Drive:
+      mosq_suppression_arab<-rep(1,length(mosq_suppression_arab))
+  }
 
-
+  #An. funestus
   supp_filename_fun<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_fun_PBO",square_number,"_",run_number,".csv",sep="")
   mosq_suppression_fun<-unlist(read.csv(supp_filename_fun,header=F,colClasses="numeric"))
   dimnames(mosq_suppression_fun)<-NULL
-  mosq_suppression_fun<-as.vector(mosq_suppression_fun)
-  # #No Drive:
-  mosq_suppression_fun<-rep(1,length(mosq_suppression_fun))
+  if (fun_supp){
+      mosq_suppression_fun<-as.vector(mosq_suppression_fun)
+  } else{
+      #No Drive:
+      mosq_suppression_fun<-rep(1,length(mosq_suppression_fun))
+  }
   
-  supp_filename_new<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_arab_PBO",square_number,"_",run_number,".csv",sep="")
-  mosq_suppression_new<-unlist(read.csv(supp_filename_arab,header=F,colClasses="numeric"))
-  dimnames(mosq_suppression_new)<-NULL
-  mosq_suppression_new<-as.vector(mosq_suppression_new)
-  # #No Drive:
-  mosq_suppression_new<-rep(1,length(mosq_suppression_new))
+  #Non-target vector species
+  mosq_suppression_new<-rep(1,length(mosq_suppression_arab))
 
   mosq_supp_lst<-list()
   mosq_supp_lst[[1]]<-mosq_suppression_gamb
@@ -271,22 +280,27 @@ get_parameters <- function(overrides = list(),square_number=square_number,run_nu
   mosq_supp_lst[[3]]<-mosq_suppression_fun
   mosq_supp_lst[[4]]<-mosq_suppression_new
   
+  #Read in files containing time series of daily relative adult mosquito emergence values:
 
+  #An. gambiae/coluzzii
   seas_filename_gamb<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 Emerge/mosq_seasonality_gamb",square_number,"_",run_number,".csv",sep = "")
   mosq_seasonality_gamb<-unlist(read.csv(seas_filename_gamb,header=F,colClasses="numeric"))
   dimnames(mosq_seasonality_gamb)<-NULL
   mosq_seasonality_gamb<-as.vector(mosq_seasonality_gamb)
 
+  #An. arabiensis
   seas_filename_arab<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 Emerge/mosq_seasonality_arab",square_number,"_",run_number,".csv",sep = "")
   mosq_seasonality_arab<-unlist(read.csv(seas_filename_arab,header=F,colClasses="numeric"))
   dimnames(mosq_seasonality_arab)<-NULL
   mosq_seasonality_arab<-as.vector(mosq_seasonality_arab)
 
+  #An. funestus
   seas_filename_fun<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 Emerge/mosq_seasonality_fun",square_number,"_",run_number,".csv",sep = "")
   mosq_seasonality_fun<-unlist(read.csv(seas_filename_fun,header=F,colClasses="numeric"))
   dimnames(mosq_seasonality_fun)<-NULL
   mosq_seasonality_fun<-as.vector(mosq_seasonality_fun)
   
+  #Non-target vector species
   seas_filename_new<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 Emerge/mosq_seasonality_arab",square_number,"_",run_number,".csv",sep = "")
   mosq_seasonality_new<-unlist(read.csv(seas_filename_fun,header=F,colClasses="numeric"))
   dimnames(mosq_seasonality_new)<-NULL
