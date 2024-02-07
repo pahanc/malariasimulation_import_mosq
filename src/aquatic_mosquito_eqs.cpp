@@ -14,19 +14,7 @@ using namespace std;
 
 integration_function_t create_eqs(AquaticMosquitoModel& model) {
     return [&model](const state_t& x, state_t& dxdt, double t) {
-        auto K = carrying_capacity(
-            t,
-            model.model_seasonality,
-            model.g0,
-            model.g,
-            model.h,
-            model.K0,
-            model.R_bar,
-            model.rainfall_floor
-        );
-        auto beta = eggs_laid(model.beta, model.mum, model.f);
-        auto n_larvae = x[get_idx(AquaticState::E)] + x[get_idx(AquaticState::L)];
-
+//The aquatic mosquito model is not updated. The model is used to initialize the numbers of pupae.        
     };
 
 }
