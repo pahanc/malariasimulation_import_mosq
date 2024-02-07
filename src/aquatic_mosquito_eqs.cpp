@@ -27,7 +27,7 @@ integration_function_t create_eqs(AquaticMosquitoModel& model) {
         auto beta = eggs_laid(model.beta, model.mum, model.f);
         auto n_larvae = x[get_idx(AquaticState::E)] + x[get_idx(AquaticState::L)];
 
-    }
+    };
 
 }
 
