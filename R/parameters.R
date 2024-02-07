@@ -233,7 +233,7 @@
 #' rates; default = TRUE 
 #'
 #' @export
-get_parameters <- function(overrides = list(),square_number=square_number,run_number=run_number, gam_supp=gam_supp, arab_supp=arab_supp, fun_supp=fun_supp) {
+get_parameters <- function(overrides = list(),square_number=square_number,run_number=run_number, supp_gam=supp_gam, supp_arab=supp_arab, supp_fun=supp_fun) {
   
   #Read in files containing time series of daily vector population suppression values:
 
@@ -242,7 +242,7 @@ get_parameters <- function(overrides = list(),square_number=square_number,run_nu
   supp_filename_gamb<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_gamb_PBO",square_number,"_",run_number,".csv",sep="")
   mosq_suppression_gamb<-unlist(read.csv(supp_filename_gamb,header=F,colClasses="numeric"))
   dimnames(mosq_suppression_gamb)<-NULL
-  if (gam_supp){
+  if (supp_gam){
       mosq_suppression_gamb<-as.vector(mosq_suppression_gamb)
   } else{
       #No Drive:
@@ -253,7 +253,7 @@ get_parameters <- function(overrides = list(),square_number=square_number,run_nu
   supp_filename_arab<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_arab_PBO",square_number,"_",run_number,".csv",sep="")
   mosq_suppression_arab<-unlist(read.csv(supp_filename_arab,header=F,colClasses="numeric"))
   dimnames(mosq_suppression_arab)<-NULL
-  if (arab_supp){
+  if (supp_arab){
       mosq_suppression_arab<-as.vector(mosq_suppression_arab)
   } else{
       #No Drive:
@@ -264,7 +264,7 @@ get_parameters <- function(overrides = list(),square_number=square_number,run_nu
   supp_filename_fun<-paste("Q:\\for_hpc\\Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_fun_PBO",square_number,"_",run_number,".csv",sep="")
   mosq_suppression_fun<-unlist(read.csv(supp_filename_fun,header=F,colClasses="numeric"))
   dimnames(mosq_suppression_fun)<-NULL
-  if (fun_supp){
+  if (supp_fun){
       mosq_suppression_fun<-as.vector(mosq_suppression_fun)
   } else{
       #No Drive:
