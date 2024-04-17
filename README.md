@@ -29,7 +29,7 @@ In addition, files containing site specific model parameters are required. These
 
 
 To run the modified malariasimulation model with the default parameters, you
-can execute the function "run_site" which is located here:
+can execute the function "run_site" :
 
 ```R
 output <- run_site(square_number=square_number, run_number=run_number, total_M=totalM, human_population=human_population, vaccine_cov=vaccine_cov, PBO=PBO)
