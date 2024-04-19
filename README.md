@@ -23,19 +23,53 @@ The following R packages are required:
 
 ## Usage
 
-To run this modified version of malariasimulation, input files generated from the mosquito metapopulation model developed in Hancock, P.A., North, A. et al. are required. These files are located here: 
-
-In addition, files containing site specific model parameters are required. These files are located and described here: 
-
+To run this modified version of malariasimulation, files containing site specific model parameters are required. These files are located in the github repository https://github.com/pahanc/inputs-for-malariasimulation_import_mosq . Input files generated from the mosquito metapopulation model developed in Hancock, P.A., North, A. et al. are also required.  These files are in the subdirectories **May 23 stoch** and **May 23 Emerge** .
 
 
 To run the modified malariasimulation model with the default parameters, you
-can execute the function run_site() which is located here:
+can execute the function "run_site" :
 
 ```R
-output <- run_site()
+output <- run_site(square_number=square_number, run_number=run_number, total_M=totalM, human_population=human_population, vaccine_cov=vaccine_cov, PBO=PBO)
+```
+where
+*  **square_number** is the index of the degree square for which site-specific parameters will be obtained. This can be either:
+    * 34 (Western Mali)
+    *  55 (The Gambia/Senegal)
+    *  65 (Southern Mali)
+    *  82 (Niger/Nigeria)
+    *  85 (Senegal/Guinea Bissau)
+    *  112 (Northern Nigeria)
+    *  128 (Western Burkina Faso)
+    *  135 (Benin/Burkina Faso)
+    *  182 (Guinea)
+    *  236 (Sierra Leone/Liberia)
+    *  242 (Cote d'Ivoire)
+    *  249 (Togo/Benin)
+    *  278 (Nigeria/Lagos)
+    *  288 (Cameroon)
+    *  290 (Liberia)
+    *  299 (Ghana)
+*  **run_number** indexes which run of the metapopulation model to use to import mosquito suppression and emergence values. There are 25 runs for each degree square area, and run_number can range from 1 to 25.
+*  **total_M** is the estimated maximum abundance of the total vector population (including all species) over the simulation period (see Hancock, P. A., North, A. et al.).
+*   **human_population** is the number of humans being modelled in a degree-square area.
+*   **vaccine_cov** is the coverage of the RTS,S vaccine in the human population
+*  **PBO** is a boolean variable indicating whether a switch to using PBO LLINs is made during period over which gene drive releases are assumed to occur.
+
+
+For example, to run the model for Western Burkina Faso using the first parameter set, assuming that no vaccines or pyrethroid-PBO nets are in place, you can run:
+
+```R
+output <- run_site(square_number=128, run_number=1, total_M=213408, human_population=10000, vaccine_cov=0, PBO=FALSE)
 ```
 
+The output daily malaria prevalence values are given by:
+
+```R
+plot(output[[1]]$n_detect_730_3650/output[[1]]$n_730_3650,type='l',xlab="Day",ylab="Prevalence")
+```
+
+![Plot](https://github.com/pahanc/inputs-for-malariasimulation_import_mosq/blob/main/square%20128%20suppress%20all%20runno1.pdf)
 
 
 ## License
