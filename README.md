@@ -34,7 +34,7 @@ output <- run_site(square_number=square_number, run_number=run_number, total_M=t
 ```
 where
 *  **square_number** is the index of the degree square for which site-specific parameters will be obtained.
-  This can be either: 34 (Western Mali),  55 (The Gambia/Senegal),  65 (Southern Mali)  ,82 (Niger/Nigeria), 85 (Senegal/Guinea Bissau) ,112 (Northern Nigeria) ,128 (Western Burkina Faso) ,135 (Benin/Burkina Faso), 182 (Guinea), 236 (Sierra Leone/Liberia), 242 (Cote d'Ivoire), 249 (Togo/Benin), 278 (Nigeria/Lagos) ,288 (Cameroon), 290 (Liberia) , 299 (Ghana)
+   This can be either: 34 (Western Mali),  55 (The Gambia/Senegal),  65 (Southern Mali)  ,82 (Niger/Nigeria), 85 (Senegal/Guinea Bissau) ,112 (Northern Nigeria) ,128 (Western Burkina Faso) ,135 (Benin/Burkina Faso), 182 (Guinea), 236 (Sierra Leone/Liberia), 242 (Cote d'Ivoire), 249 (Togo/Benin), 278 (Nigeria/Lagos) ,288 (Cameroon), 290 (Liberia) , 299 (Ghana)
 *  **run_number** indexes which run of the metapopulation model to use to import mosquito suppression and emergence values. There are 25 runs for each degree square area, and run_number can range from 1 to 25.
 *  **total_M** is the estimated maximum abundance of the total vector population (including all species) over the simulation period (see Hancock, P. A., North, A. et al.).
 *   **human_population** is the number of humans being modelled in a degree-square area.
