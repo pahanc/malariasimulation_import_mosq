@@ -69,7 +69,7 @@ The output daily malaria prevalence values are given by:
 plot(output[[1]]$n_detect_730_3650/output[[1]]$n_730_3650,type='l',xlab="Day",ylab="Prevalence")
 ```
 
-![alt text](https://github.com/pahanc/inputs-for-malariasimulation_import_mosq/blob/main/square%20128%20suppress%20all%20runno1.pdf?raw=true)
+![Plot](https://github.com/pahanc/inputs-for-malariasimulation_import_mosq/blob/main/square%20128%20suppress%20all%20runno1.pdf)
 
 
 ## License
