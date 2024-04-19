@@ -57,5 +57,20 @@ where
 *  **PBO** is a boolean variable indicating whether a switch to using PBO LLINs is made during period over which gene drive releases are assumed to occur.
 
 
+For example, to run the model for Western Burkina Faso using the first parameter set, assuming that no vaccines or pyrethroid-PBO nets are in place, you can run:
+
+```R
+output <- run_site(square_number=128, run_number=1, total_M=213408, human_population=10000, vaccine_cov=0, PBO=FALSE)
+```
+
+The output daily malaria prevalence values are given by:
+
+```R
+plot(output[[1]]$n_detect_730_3650/output[[1]]$n_730_3650,type='l',xlab="Day",ylab="Prevalence")
+```
+
+![alt text](https://github.com/pahanc/inputs-for-malariasimulation_import_mosq/blob/main/square%20128%20suppress%20all%20runno1.pdf)
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
