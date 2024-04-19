@@ -23,9 +23,7 @@ The following R packages are required:
 
 ## Usage
 
-To run this modified version of malariasimulation, input files generated from the mosquito metapopulation model developed in Hancock, P.A., North, A. et al. are required. These files are located here:  
-
-In addition, files containing site specific model parameters are required. These files are located in the github repository https://github.com/pahanc/inputs-for-malariasimulation_import_mosq
+To run this modified version of malariasimulation, files containing site specific model parameters are required. These files are located in the github repository https://github.com/pahanc/inputs-for-malariasimulation_import_mosq . Input files generated from the mosquito metapopulation model developed in Hancock, P.A., North, A. et al. are also required.  These files are in the subdirectories **May 23 stoch** and **May 23 Emerge** .
 
 
 To run the modified malariasimulation model with the default parameters, you
