@@ -239,7 +239,7 @@ get_parameters <- function(overrides = list(),square_number=square_number,run_nu
 
   #An. gambiae/coluzzii
   
-  supp_filename_gamb<-paste("Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_gamb",square_number,"_",run_number,".csv",sep="")
+  supp_filename_gamb<-paste("Seas and supp species specific\\With funestus suppression\\May 23 stoch\\mosq_supp_het_stronger_gamb",square_number,"_",run_number,".csv",sep="")
   mosq_suppression_gamb<-unlist(read.csv(supp_filename_gamb,header=F,colClasses="numeric"))
   dimnames(mosq_suppression_gamb)<-NULL
   if (supp_gam){
@@ -250,7 +250,7 @@ get_parameters <- function(overrides = list(),square_number=square_number,run_nu
   }
 
   #An. arabiensis
-  supp_filename_arab<-paste("Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_arab",square_number,"_",run_number,".csv",sep="")
+  supp_filename_arab<-paste("Seas and supp species specific\\With funestus suppression\\May 23 stoch\\mosq_supp_het_stronger_arab",square_number,"_",run_number,".csv",sep="")
   mosq_suppression_arab<-unlist(read.csv(supp_filename_arab,header=F,colClasses="numeric"))
   dimnames(mosq_suppression_arab)<-NULL
   if (supp_arab){
@@ -261,7 +261,7 @@ get_parameters <- function(overrides = list(),square_number=square_number,run_nu
   }
 
   #An. funestus
-  supp_filename_fun<-paste("Seas and supp species specific/With funestus suppression/May 23 stoch/mosq_supp_het_stronger_fun",square_number,"_",run_number,".csv",sep="")
+  supp_filename_fun<-paste("Seas and supp species specific\\With funestus suppression\\May 23 stoch\\mosq_supp_het_stronger_fun",square_number,"_",run_number,".csv",sep="")
   mosq_suppression_fun<-unlist(read.csv(supp_filename_fun,header=F,colClasses="numeric"))
   dimnames(mosq_suppression_fun)<-NULL
   if (supp_fun){
@@ -283,25 +283,25 @@ get_parameters <- function(overrides = list(),square_number=square_number,run_nu
   #Read in files containing time series of daily relative adult mosquito emergence values:
 
   #An. gambiae/coluzzii
-  seas_filename_gamb<-paste("Seas and supp species specific/With funestus suppression/May 23 Emerge/mosq_seasonality_gamb",square_number,"_",run_number,".csv",sep = "")
+  seas_filename_gamb<-paste("Seas and supp species specific\\With funestus suppression\\May 23 Emerge\\mosq_seasonality_gamb",square_number,"_",run_number,".csv",sep = "")
   mosq_seasonality_gamb<-unlist(read.csv(seas_filename_gamb,header=F,colClasses="numeric"))
   dimnames(mosq_seasonality_gamb)<-NULL
   mosq_seasonality_gamb<-as.vector(mosq_seasonality_gamb)
 
   #An. arabiensis
-  seas_filename_arab<-paste("Seas and supp species specific/With funestus suppression/May 23 Emerge/mosq_seasonality_arab",square_number,"_",run_number,".csv",sep = "")
+  seas_filename_arab<-paste("Seas and supp species specific\\With funestus suppression\\May 23 Emerge\\mosq_seasonality_arab",square_number,"_",run_number,".csv",sep = "")
   mosq_seasonality_arab<-unlist(read.csv(seas_filename_arab,header=F,colClasses="numeric"))
   dimnames(mosq_seasonality_arab)<-NULL
   mosq_seasonality_arab<-as.vector(mosq_seasonality_arab)
 
   #An. funestus
-  seas_filename_fun<-paste("Seas and supp species specific/With funestus suppression/May 23 Emerge/mosq_seasonality_fun",square_number,"_",run_number,".csv",sep = "")
+  seas_filename_fun<-paste("Seas and supp species specific\\With funestus suppression\\May 23 Emerge\\mosq_seasonality_fun",square_number,"_",run_number,".csv",sep = "")
   mosq_seasonality_fun<-unlist(read.csv(seas_filename_fun,header=F,colClasses="numeric"))
   dimnames(mosq_seasonality_fun)<-NULL
   mosq_seasonality_fun<-as.vector(mosq_seasonality_fun)
   
   #Non-target vector species
-  seas_filename_new<-paste("Seas and supp species specific/With funestus suppression/May 23 Emerge/mosq_seasonality_arab",square_number,"_",run_number,".csv",sep = "")
+  seas_filename_new<-paste("Seas and supp species specific\\With funestus suppression\\May 23 Emerge\\mosq_seasonality_arab",square_number,"_",run_number,".csv",sep = "")
   mosq_seasonality_new<-unlist(read.csv(seas_filename_new,header=F,colClasses="numeric"))
   dimnames(mosq_seasonality_new)<-NULL
   mosq_seasonality_new<-as.vector(mosq_seasonality_new)
