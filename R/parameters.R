@@ -301,7 +301,7 @@ get_parameters <- function(overrides = list(),square_number=square_number,par_nu
   mosq_seasonality_fun<-as.vector(mosq_seasonality_fun)
   
   #Non-target vector species
-  seas_filename_new<-paste("Seas and supp species specific\\With funestus suppression\\Jul 24 Emerge\\mosq_seasonality_arab",square_number,"_",par_number,"_",run_number,".csv",sep="")
+  seas_filename_new<-paste("Seas and supp species specific\\With funestus suppression\\Jul 24 Emerge\\mosq_seasonality_arab",square_number,"_",par_number,".csv",sep="")
   mosq_seasonality_new<-unlist(read.csv(seas_filename_new,header=F,colClasses="numeric"))
   dimnames(mosq_seasonality_new)<-NULL
   mosq_seasonality_new<-as.vector(mosq_seasonality_new)
