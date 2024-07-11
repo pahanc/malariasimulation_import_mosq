@@ -233,7 +233,7 @@
 #' rates; default = TRUE 
 #'
 #' @export
-get_parameters <- function(overrides = list(),square_number=square_number,par_number=par_number,run_number=run_number, supp_gam=supp_gam, supp_arab=supp_arab, supp_fun=supp_fun) {
+get_parameters <- function(overrides = list(),square_number=square_number,par_number=par_number,run_number=run_number, supp_gam=supp_gam, supp_arab=supp_arab, supp_fun=supp_fun,tag=tag) {
   
   #Read in files containing time series of daily vector population suppression values:
 
@@ -314,6 +314,7 @@ get_parameters <- function(overrides = list(),square_number=square_number,par_nu
 
 
   parameters <- list(
+    tag=tag
     mosq_suppression = mosq_supp_lst,
     mosq_seasonality = mosq_seas_lst,
     emergence = 0,
