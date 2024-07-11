@@ -314,7 +314,7 @@ get_parameters <- function(overrides = list(),square_number=square_number,par_nu
 
 
   parameters <- list(
-    tag=tag
+    tag=tag,
     mosq_suppression = mosq_supp_lst,
     mosq_seasonality = mosq_seas_lst,
     emergence = 0,
