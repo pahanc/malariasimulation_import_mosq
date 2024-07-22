@@ -241,6 +241,8 @@ get_parameters <- function(overrides = list(),square_number=square_number,par_nu
   
   supp_filename_gamb<-paste("Seas and supp species specific\\With funestus suppression\\Jul 24 stoch\\mosq_supp_het_stronger_gamb",square_number,"_",par_number,"_",run_number,".csv",sep="")
   mosq_suppression_gamb<-unlist(read.csv(supp_filename_gamb,header=F,colClasses="numeric"))
+  print(paste("supp_filename_gamb",supp_filename_gamb))
+  print(length(mosq_suppression_gamb))
   dimnames(mosq_suppression_gamb)<-NULL
   if (supp_gam){
       mosq_suppression_gamb<-as.vector(mosq_suppression_gamb)
