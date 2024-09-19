@@ -1,0 +1,9 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: Hancock
+  given-names: Penelope A.
+orcid: https://orcid.org/0000-0001-5531-1082
+title:pahanc/malariasimulation_import_mosq: v1.0.0z
+version: v1.0.0z
+date-released: 2024-09-19
